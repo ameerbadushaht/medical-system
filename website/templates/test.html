@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width-device-width, initial-scale=1.0"> 
+<title>Read, write, Update, Delete Data v9.x.x</title> 
+<style>
+    label{ display: inline-block; width:80px}
+    input,select{ width:120px}
+</style>
+</head>
+
+<body>
+
+<label>Name</label> <input id="Namebox" type="text"><br><br>
+<label>RollNo</label> <input id="Rollbox" type="text"> <br><br>
+<label>Section</label> <input id="Secbox" type="text"> <br><br>
+<label>Name</label> 
+<select id="Genbox"> 
+    <option value="Male">Male</option> 
+    <option value="Female">Female</option>
+
+</select>
+
+
+<hr>
+
+<button id="Insbtn">INSERT</button>
+<button id="Selbtn">SELECT</button>
+<button id="Updbtn">UPDATE</button>
+<button id="Delbtn">DELETE</button>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyB8AmnX2lWrfVaAo_iqa0nKAHjaENFf5tg",
+      authDomain: "test-fdf78.firebaseapp.com",
+      projectId: "test-fdf78",
+      storageBucket: "test-fdf78.appspot.com",
+      messagingSenderId: "481438430430",
+      appId: "1:481438430430:web:6533d6606ba90244417e4f"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+
+    import {getDatabase, ref, get,set, child, update, remove}
+    from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
+   
+    const db= getDatabase();
+    var namebox =document.getElementById("Namebox");
+    var rollbox =document.getElementById("Rollbox");
+    var secbox =document.getElementById("Secbox"); 
+    var genbox =document.getElementById("Genbox");
+
+
+    var insBtn =document.getElementById("Insbtn");
+    var selBtn =document.getElementById("Selbtn"); 
+    var updBtn =document.getElementById("updbtn");
+    var delBtn =document.getElementById("Delbtn");
+
+
+
+
+    function InsertData(){
+
+        set(ref(db, "TheStudents/"+ rollbox.value),{
+            NaneOfStd: namebox.value,
+            RollNo: rollbox.value,
+            Section: secbox.value,
+            Gender: genbox.value
+        })
+        .then(()=>{
+
+            alert("data stored successfully");
+
+        })
+        .catch((error)=>{
+
+            alert("unsuccessful, error"+error);
+        });
+
+    }
+
+            insBtn.addEventListener('click', InsertData);
+
+
+        
+     function SelectData(){
+        const dbref= ref(db);
+
+        get(child(dbref, "TheStudents/"+ rollbox.value)).then((snapshot)=>{
+            if(snapshot.exists()){
+                namebox.value= snapshot.val().NameOfStd; 
+                secbox.value =snapshot.val().Section;
+                genbox.value= snapshot.val().Gender;
+            }
+            
+            else{
+
+                alert("No data found"); 
+            }
+
+        })
+        .catch((error)=>{
+            alert("unsuccessful, error"+error);
+        });
+    }
+  </script>

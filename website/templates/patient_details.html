@@ -1,0 +1,108 @@
+{% extends "base.html" %} {% block title %}Patient{% endblock %} {% block content
+    %}
+    
+ <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <body>
+      <h1>Patient Details</h1>
+      <hr>
+      <!-- <div id="menu">
+          <nav>
+                
+              <a href="/patient">Patient Details</a>|
+              <a href="/prescription">Prescription</a> |
+              <a href="">Emergency </a>|
+              <a href="/inbox">Inbox</a>
+             
+              
+            
+          </nav>
+      </div> -->
+  <p class="ml-4"><a href="{{url_for('')}}"></a></p>
+      <div class="col-sm-8">
+  
+          <table >
+                              
+              <tr>
+                  <th></th>  
+                  <th></th>  
+              </tr>  
+              <tr>  
+                  <td>Name</td>
+              </tr>
+              <tr>
+                  <td>Patient ID</td>
+              </tr>
+              <tr>
+                  <td>Gender</td>
+              </tr>
+              <tr>
+                  <td>Age</td>
+              </tr>
+              <tr>
+                  <td>Address</td>
+              </tr><tr>
+                  <td>Patient Relative Name</td>
+              </tr><tr>
+                  <td>Phone Number</td>
+              </tr>
+  
+                                  
+              <!-- <%  
+  
+              Connection con;
+              PreparedStatement pst;
+              ResultSet rs;
+  
+              Class.forName("com.mysql.jdbc.Driver");
+              con = DriverManager.getConnection("jdbc:mysql://localhost/add","root","");
+              
+                  String query = "select * from addc";
+                  Statement st = con.createStatement();
+                  
+                  rs =  st.executeQuery(query);
+                  
+                      while(rs.next())
+                      {
+                          String id = rs.getString("id");
+                  %>
+  
+              <tr>
+                  <td><%=rs.getString("name") %></td>
+                  <td><%=rs.getString("phone") %></td>
+                  <td><%=rs.getString("email") %></td>
+              
+              </tr>
+          
+          
+              <%
+              
+                  }
+              %>
+              -->
+
+              {% for user in user %}
+              <tr>
+                  <td>{{user.firstname}}</td>
+                  <td>{{user.user_id}}</td>
+                  <td>{{user.gender}}</td>
+                  <td>{{user.age}}</td>
+                  <td>{{user.address}}</td>
+                  <td>{{user.relative}}</td>
+                  <td>{{user.phone}}</td>
+              </tr>
+              {% endfor %}
+          </table>    
+      </div>
+
+
+    {% endblock %}

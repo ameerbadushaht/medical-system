@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <title>Patient</title>
+    <style>
+        body{
+              background-color:#8d9cb6;
+              background-image: linear-gradient(to bottom right, rgb(226, 229, 233),  rgb(145, 195, 178), rgb(13, 43, 109) );
+              height: 100%;
+              
+              
+              background-repeat: no-repeat;
+              background-attachment: fixed; 
+              background-size: 100% 100%;
+                }
+      
+      .navbar a {
+       
+        font-size: 16px;
+    
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+
+
+
+      .dropbtn {
+  background-color: #202328;
+  color: rgb(189, 185, 185);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #dbd9d9;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color:  #202328}
+      </style>
+</head>
+    
+
+    
+ 
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+              <div class="navbar-nav">
+                <h2 style="color: rgb(223, 223, 223)">Re-Medi System</h2>
+                
+                <!-- <div pos="right"> -->
+                  <a class="nav-item nav-link" id="home" href="/doctor">Home</a>
+                    
+                   
+                    
+                  
+                  <a class="nav-item nav-link" href="/map">Live location</a>
+                  <a class="nav-item nav-link" href="/index">Chat</a> 
+                  <a class="nav-item nav-link" href="">Contact Patient</a>
+                    {% if user.is_authenticated %}
+                  <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                  {% else %}
+                  <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                  <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                  <!-- <a class="nav-item nav-link" id="contact" href="/contact">Contact Us</a> -->
+                 
+                  {% endif %}
+      
+                <!-- </div> -->
+              </div>
+            </div>
+          </nav>
+      
+        
+
+       <div class="container">
+      <h1>Patient Details</h1>
+      <hr>
+    
+      <p style="text-align:left">Click here to see <a href="/history">history</a> </p>
+      <p style="text-align: left">click here to see <a href="/realtime">real time values</a></p>
+      <ul>
+        {% for s in styles %}
+        <li><a href="{{ url_for( 'patient_details', style=s.style ) }}">{{ s.style }}</a></li>
+        {% endfor %}
+    </ul>
+  
+      <div class="col-sm-13">
+  
+          <table style="width:100% ;" id="ex-table">
+                              
+              <tr>
+                  <th>Name</th> 
+                  <th>Patient ID</th> 
+                  <th>Gender</th>
+                  <th>Age</th>
+                  <th>Address</th>
+                  <th>Relative</th>
+                  <th>Phone Number</th>
+                  <th></th>
+
+              </tr>  
+              <tr>  
+                  
+                  <td>{{user.first_name}}</td>
+              
+                 
+                  <td>{{user.user_id}}</td>
+
+                 
+                  <td>{{user.gender}}</td>
+
+              
+                  
+                  <td>{{user.age}}</td>
+
+              
+                  
+                  <td>{{user.address}}</td>
+
+                  
+                  <td>{{user.relative}}</td>
+
+              
+                  
+                  <td>{{user.phone}}</td>
+
+              </r>
+  
+                                  
+              <!-- <%  
+  
+              Connection con;
+              PreparedStatement pst;
+              ResultSet rs;
+  
+              Class.forName("com.mysql.jdbc.Driver");
+              con = DriverManager.getConnection("jdbc:mysql://localhost/add","root","");
+              
+                  String query = "select * from addc";
+                  Statement st = con.createStatement();
+                  
+                  rs =  st.executeQuery(query);
+                  
+                      while(rs.next())
+                      {
+                          String id = rs.getString("id");
+                  %>
+  
+              <tr>
+                  <td><%=rs.getString("name") %></td>
+                  <td><%=rs.getString("phone") %></td>
+                  <td><%=rs.getString("email") %></td>
+              
+              </tr>
+          
+          
+              <%
+              
+                  }
+              %>
+              -->
+          </table>    
+          
+      </div>
+    </div>
+    </body>
+    </html>

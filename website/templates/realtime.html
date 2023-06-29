@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <title>Login</title>
+    <style>
+        body{
+              background-color:#8d9cb6;
+              background-image: linear-gradient(to bottom right, rgb(226, 229, 233),  rgb(145, 195, 178), rgb(13, 43, 109) );
+              height: 100%;
+              
+              
+              background-repeat: no-repeat;
+              background-attachment: fixed; 
+              background-size: 100% 100%;
+                }
+      
+      .navbar a {
+       
+        font-size: 16px;
+    
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      form {
+    margin-left: 25%;
+    margin-right:25%;
+    width: 50%;
+}
+      .dropbtn {
+  background-color: #202328;
+  color: rgb(189, 185, 185);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #dbd9d9;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color:  #202328}
+      </style>
+</head>
+ 
+ 
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+              <div class="navbar-nav">
+                <h2 style="color: rgb(223, 223, 223)">Re-Medi System</h2>
+                
+                <!-- <div pos="right"> -->
+                <a class="nav-item nav-link" id="home" href="/doctor">Home</a>
+                
+               
+                
+                <a class="nav-item nav-link" href="/drpatient">Patient Details</a>
+                <a class="nav-item nav-link" href="/prescription">Chat</a> 
+                <a class="nav-item nav-link" href="">Contact Patient</a>
+                  {% if user.is_authenticated %}
+                <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                {% else %}
+                <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                <!-- <a class="nav-item nav-link" id="contact" href="/contact">Contact Us</a> -->
+               
+                {% endif %}
+      
+                <!-- </div> -->
+              </div>
+            </div>
+          </nav>
+<style>
+
+nav{
+ width: 100%;
+text-align:center;
+background-color: rgb(175, 179, 210);
+background-image:url();
+  
+
+
+margin-top: 0px;    
+}
+
+nav a{
+text-decoration: none;
+text-transform: uppercase;
+margin-right: 22px;
+color: rgb(29, 29, 30);
+font-weight: bold;
+}
+nav a:hover{
+color: rgb(186, 186, 191);
+background-color: rgb(0, 0, 0);
+
+}
+
+.btn{
+
+margin-left: 100px;
+}
+</style>
+
+
+<!-- <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  crossorigin="anonymous"
+/> -->
+
+
+<body>
+
+
+
+<!-- <html>
+  <style>
+
+    .menu nav{
+     width: 100%;
+    text-align:center;
+    background-color: rgb(50, 64, 196);
+    background-image:url();
+
+ 
+
+    margin-top: -10px;    
+}
+
+.menu nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-right: 22px;
+    color: rgb(244, 243, 252);
+    font-weight: bold;
+}
+.menu nav a:hover{
+    background-color: rgb(3, 81, 250);
+
+}
+</style> -->
+
+    <body>
+<div class="main">
+
+    <h1>Real Time Values</h1>
+    <p style="text-align:left">Click here to see <a href="/history">history</a> </p>
+    <hr>
+
+</div>
+
+</div>
+    <!-- <div class="search" style="margin:auto;max-width:300px">
+        
+        Search pattient by: <br>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Click here</button>
+            <div id="myDropdown" class="dropdown-content">
+               
+            </div>
+        </div> -->
+</div>
+<div class="col-sm-8">
+
+    <table id="tbl-student" class="table table-responsive table-bordered" cellpadding ="0" width="30%">
+                        
+        <tr>
+            <th>Parameters</th>  
+            <th>Value</th>  
+        </tr>  
+        <tr>  
+            <td>Temperature</td>
+        </tr>
+        <tr>
+            <td>Blood Pressure</td>
+        </tr>
+        <tr>
+            <td>SpO2</td>
+        </tr>
+        <tr>
+            <td>Pulse Rate</td>
+        </tr>
+
+                            
+        <!-- <%  
+
+        Connection con;
+        PreparedStatement pst;
+        ResultSet rs;
+
+        Class.forName("com.mysql.jdbc.Driver");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/add","root","");
+        
+            String query = "select * from addc";
+            Statement st = con.createStatement();
+            
+            rs =  st.executeQuery(query);
+            
+                while(rs.next())
+                {
+                    String id = rs.getString("id");
+            %>
+
+        <tr>
+            <td><%=rs.getString("name") %></td>
+            <td><%=rs.getString("phone") %></td>
+            <td><%=rs.getString("email") %></td>
+        
+        </tr>
+    
+    
+        <%
+        
+            }
+        %>
+        -->
+    </table>    
+</div>
+</body>
+</html>

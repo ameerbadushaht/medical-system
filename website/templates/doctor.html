@@ -1,0 +1,182 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          crossorigin="anonymous"
+        />
+        <title>Login</title>
+        <style>
+            body{
+                  background-color:#8d9cb6;
+                  background-image: linear-gradient(to bottom right, rgb(226, 229, 233),  rgb(145, 195, 178), rgb(13, 43, 109) );
+                  height: 100%;
+                  
+                  
+                  background-repeat: no-repeat;
+                  background-attachment: fixed; 
+                  background-size: 100% 100%;
+                    }
+          
+          .navbar a {
+           
+            font-size: 16px;
+        
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+    
+          form {
+        margin-left: 25%;
+        margin-right:25%;
+        width: 50%;
+    }
+          .dropbtn {
+      background-color: #202328;
+      color: rgb(189, 185, 185);
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {background-color: #dbd9d9;}
+    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown:hover .dropbtn {background-color:  #202328}
+          </style>
+    </head>
+     
+     
+        <body>
+    
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbar"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                  <div class="navbar-nav">
+                    <h2 style="color: rgb(223, 223, 223)">Re-Medi System</h2>
+                    
+                    <!-- <div pos="right"> -->
+                    <a class="nav-item nav-link" id="home" href="/">Home</a>
+                    
+                   
+                    
+                    <a class="nav-item nav-link" href="/drpatient">Patient Details</a>
+                    <a class="nav-item nav-link" href="/map">Live location</a>
+                    <a class="nav-item nav-link" href="/drindex">Chat</a> 
+                    <a class="nav-item nav-link" href="">Contact Patient</a>
+                      {% if user.is_authenticated %}
+                    <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                    {% else %}
+                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                    <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                    <!-- <a class="nav-item nav-link" id="contact" href="/contact">Contact Us</a> -->
+                   
+                    {% endif %}
+          
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </nav>
+  <style>
+
+    nav{
+     width: 100%;
+    text-align:center;
+    background-color: rgb(175, 179, 210);
+    background-image:url();
+      
+ 
+
+    margin-top: 0px;    
+}
+
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-right: 22px;
+    color: rgb(29, 29, 30);
+    font-weight: bold;
+}
+nav a:hover{
+  color: rgb(186, 186, 191);
+    background-color: rgb(0, 0, 0);
+
+}
+
+/* .btn{
+ 
+  margin-left: 100px;
+} */
+  </style>
+
+    
+ <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+
+
+<body>
+    
+    
+  
+<br><br>
+  <!-- <div align="center" class="btn">
+      <a href="/realtime">Real Time Values</a>  | &nbsp;
+       <a href="/history">History of Patients</a>
+  </div> -->
+  <div align="center" class="btn">
+  <button type="button" class="btn btn-outline-success"><a href="/realtime">Real Time Values</a></button>
+  <button type="button" class="btn btn-outline-success"><a href="/history">History Values</a></button>
+</div>
+</body>
+
+</html>
+

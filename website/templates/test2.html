@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    
+    <ul id="list">
+
+    </ul>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyB-350Ohu-zFhKF0hITt6HJMYnMqHCbEdk",
+            authDomain: "real-tmedical.firebaseapp.com",
+            databaseURL: "https://real-tmedical-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "real-tmedical",
+            storageBucket: "real-tmedical.appspot.com",
+            messagingSenderId: "297630016300",
+            appId: "1:297630016300:web:169f0bc0ea514b14714289",
+            measurementId: "G-SEGXPBF4PE"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        
+        var stdNo=0;
+        function aadItemsToList(name,rollNo,sec,gen){
+            var ul=document.getElementById('list');
+            var header= document.createElement('h2');
+
+            var _name=document.createElement('li');
+            var _rollNo=document.createElement('li');
+            var _sec=document.createElement('li');
+            var _gen=document.createElement('li');
+
+            header.innerHtml='Student-'+ (++stdNo);
+
+            _name.innerHTML='Name:' +name;
+            _rollNo.innerHTML='RollNo:' +rollno;
+            _sec.innerHTML='Sec:' +sec;
+            _gen.innerHTML='Gen:' +gen;
+
+            ul.appendChild(header);
+            ul.appendChild(_name);
+            ul.appendChild(_rollNo);
+            ul.appendChild(_sec);
+            ul.appendChild(_gen);
+
+
+        }
+
+        function fetchAllData(){
+            firebase.database().ref('student').once('value', function(snapshot){
+                snapshot.forEach(
+                    function(childsnapshot){
+                        let name=ChildSnapshot.val().NameOFStudent;
+                        let roll=ChildSnapshot.val().RollNo;
+                        let sec=ChildSnapshot.val().Section;
+                        let gen=ChildSnapshot.val().Gender;
+                        addItemsToList(name,roll,sec,gen);
+
+                    })
+            })
+        }
+
+        window.onload(FetchAllData());
+
+    </script>
+       hi
+    
+</body>
+</html>

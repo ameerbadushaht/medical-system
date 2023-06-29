@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <title>Login</title>
+    <style>
+        body{
+              background-color:#8d9cb6;
+              background-image: linear-gradient(to bottom right, rgb(226, 229, 233),  rgb(145, 195, 178), rgb(13, 43, 109) );
+              height: 100%;
+              
+              
+              background-repeat: no-repeat;
+              background-attachment: fixed; 
+              background-size: 100% 100%;
+                }
+      
+      .navbar a {
+       
+        font-size: 16px;
+    
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      form {
+    margin-left: 25%;
+    margin-right:25%;
+    width: 50%;
+}
+      .dropbtn {
+  background-color: #202328;
+  color: rgb(189, 185, 185);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #dbd9d9;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color:  #202328}
+      </style>
+</head>
+ 
+ 
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+              <div class="navbar-nav">
+                <h2 style="color: rgb(223, 223, 223)">Re-Medi System</h2>
+                
+                <!-- <div pos="right"> -->
+                <a class="nav-item nav-link" id="home" href="/doctor">Home</a>
+                
+               
+                
+                <a class="nav-item nav-link" href="/drpatient">Patient Details</a>
+                <a class="nav-item nav-link" href="/prescription">Prescription</a> 
+                <a class="nav-item nav-link" href="">Contact Patient</a>
+                  {% if user.is_authenticated %}
+                <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                {% else %}
+                <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                <!-- <a class="nav-item nav-link" id="contact" href="/contact">Contact Us</a> -->
+               
+                {% endif %}
+      
+                <!-- </div> -->
+              </div>
+            </div>
+          </nav>
+
+
+
+<!-- <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  crossorigin="anonymous"
+/> -->
+
+
+<body>
+
+
+
+
+
+    <body>
+<div class="main">
+
+ 
+  
+
+    
+</div>
+
+</div>
+    <!-- <div class="search" style="margin:auto;max-width:300px">
+        
+        Search pattient by: <br>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Click here</button>
+            <div id="myDropdown" class="dropdown-content">
+               
+            </div>
+        </div> -->
+</div>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+    <h1>History</h1>
+    <p style="text-align: left">click here to see <a href="/realtime">real time values</a></p>
+    <hr>
+    
+    <tr>
+      <td>Patient ID</td>&nbsp;
+      <td>{{user.user_id}}</td>
+
+  </tr>
+ 
+  </tr>
+</table> 
+    
+    <!-- <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+      <button class="btn" onclick="filterSelection('Temperature')"> Temperature</button>
+      <button class="btn" onclick="filterSelection('bp')"> Blood pressure</button>
+      <button class="btn" onclick="filterSelection('spo2')"> Spo2</button>
+      <button class="btn" onclick="filterSelection('pulse')"> Pulse rate</button>
+    </div> -->
+    
+    
+      </head>
+      <body>
+      
+      <!-- MAIN (Center website) -->
+     
+      
+      
+      
+      <!-- Portfolio Gallery Grid -->
+      <div class="row">
+        <div class="column nature">
+          <div class="content">
+            
+            
+          </div>
+        </div>
+        <div class="column nature">
+          <div class="content">
+          
+          </div>
+        </div>
+        <div class="column nature">
+          <div class="content">
+          
+            
+          </div>
+        </div>
+        
+        <div class="column cars">
+          <div class="content">
+            
+          </div>
+        </div>
+        <div class="column cars">
+          <div class="content">
+          
+          </div>
+        </div>
+        <div class="column cars">
+          <div class="content">
+         
+          </div>
+        </div>
+      
+        <div class="column people">
+          <div class="content">
+            
+          </div>
+        </div>
+        <div class="column people">
+          <div class="content">
+          
+          </div>
+        </div>
+        <div class="column people">
+          <div class="content">
+         
+          </div>
+        </div>
+      <!-- END GRID -->
+      </div>
+      
+      <!-- END MAIN -->
+      </div>
+      <table style="width:100% ;margin-left: 30px;" id="ex-table">
+        <thead>
+          
+    <div id="myBtnContainer">
+        <tr id="tr">
+          <th>S No</th>
+          <th> <button class="btn" onclick="filterSelection('bp')" >Date</button></th>
+
+          <th> <button class="btn" onclick="filterSelection('bp')">Temperature</button></th>
+          <th> <button class="btn" onclick="filterSelection('bp')">Pulse Rate</button></th> 
+          <th> <button class="btn" onclick="filterSelection('bp')" >SpO2</button></th>
+          <th> <button class="btn" onclick="filterSelection('bp')">Blood Pressue</button></th>
+          
+          </tr>
+    </div>
+        </thead>
+        <tbody id="tbody1">
+            
+
+
+        </tbody>
+       </table> 
+       <table >
+                              
+       
+
+       <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+       <script type="module">
+        // Import the functions you need from the SDKs you need
+        //  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+        //  // TODO: Add SDKs for Firebase products that you want to use
+        //  // https://firebase.google.com/docs/web/setup#available-libraries
+       
+        //  // Your web app's Firebase configuration
+        //  const firebaseConfig = {
+        //    apiKey: "AIzaSyA491Zy98knIDgFhF6J-R28DCDCYeLxKXo",
+        //    authDomain: "student-341fd.firebaseapp.com",
+        //    projectId: "student-341fd",
+        //    storageBucket: "student-341fd.appspot.com",
+        //    messagingSenderId: "972939161194",
+        //    appId: "1:972939161194:web:cf789b0fd7e280d2f92413"
+        //  };
+
+
+         //new web
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyB-350Ohu-zFhKF0hITt6HJMYnMqHCbEdk",
+          authDomain: "real-tmedical.firebaseapp.com",
+          databaseURL: "https://real-tmedical-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "real-tmedical",
+          storageBucket: "real-tmedical.appspot.com",
+          messagingSenderId: "297630016300",
+          appId: "1:297630016300:web:169f0bc0ea514b14714289",
+          measurementId: "G-SEGXPBF4PE"
+        };
+         // Initialize Firebase
+         const app = initializeApp(firebaseConfig);
+         import { getDatabase, ref, child, onValue, get 
+        ,equalTo,query,limitToFirst,orderByChild}
+
+        from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+
+        const db = getDatabase();
+
+
+    var stdNo= 0;
+
+    var tbody=document.getElementById('tbody1');
+
+
+
+    function AddItemToTable(date,temp, pulse, spo2, bp){ 
+        let trow =document.createElement("tr");
+            let td1= document.createElement('td');
+            let td2 =document.createElement('td'); 
+            let td3= document.createElement('td');
+            let td4= document.createElement('td');
+            let td5= document.createElement('td');
+            let td6= document.createElement('td');
+
+
+            td1.innerHTML= ++stdNo;
+            td2.innerHTML= date;
+
+            td3.innerHTML= temp;
+
+            td4.innerHTML= pulse;
+
+            td5.innerHTML= spo2;
+
+            td6.innerHTML= bp;
+            trow.appendChild(td1);
+
+
+            trow.appendChild(td2); 
+            trow.appendChild(td3);
+
+            trow.appendChild(td4);
+
+            trow.appendChild(td5);
+            trow.appendChild(td6);
+
+
+
+
+            tbody.appendChild(trow);
+        }
+
+        function AddAllItemsToTable(TheStudent){
+            stdNo=0;
+            tbody.innerHTML='';
+            TheStudent.forEach(element=>{
+                AddItemToTable(element.Date,element.Temp,element.Pulse,element.SpO2,element.BP)
+            });
+        }
+
+        function GetAllDataOnce(){
+            // const dbRef=ref(db);
+            const que=query(ref(db,"data"));
+
+            // get(child(dbRef,"student"))
+            
+            get(que)
+            .then((snapshot) =>{
+                var students=[];
+                snapshot.forEach(childSnapshot=>{
+                    students.push(childSnapshot.val());
+                });
+                AddAllItemsToTable(students);
+            });
+            
+        }
+        window.onload=GetAllDataOnce;
+        </script>
+    
+
+
+
+
+</script>
+      <!-- <script>
+      filterSelection("all")
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+      
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+      }
+      
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);     
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+      
+      
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+      </script> -->
+      
+    </html>

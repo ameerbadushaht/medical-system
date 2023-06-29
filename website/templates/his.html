@@ -1,0 +1,197 @@
+<html>
+<body>
+<style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+}
+
+table {
+    border-spacing: 5px;
+}
+
+</style>
+
+
+
+<head>
+    <title>Denuncias Municipales ASDE</title>
+    </head>
+
+    <table style="width:100%" id="ex-table">
+        <thead>
+        <tr id="tr">
+
+          <th>sno</th>
+          <th>Name</th> 
+          <th>RollNo</th>
+          <th>Section</th>
+          <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody id="tbody1">
+            
+
+
+        </tbody>
+       </table> 
+
+
+       <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+       <script type="module">
+         // Import the functions you need from the SDKs you need
+         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+         // TODO: Add SDKs for Firebase products that you want to use
+         // https://firebase.google.com/docs/web/setup#available-libraries
+       
+         // Your web app's Firebase configuration
+         const firebaseConfig = {
+           apiKey: "AIzaSyA491Zy98knIDgFhF6J-R28DCDCYeLxKXo",
+           authDomain: "student-341fd.firebaseapp.com",
+           projectId: "student-341fd",
+           storageBucket: "student-341fd.appspot.com",
+           messagingSenderId: "972939161194",
+           appId: "1:972939161194:web:cf789b0fd7e280d2f92413"
+         };
+       
+         // Initialize Firebase
+         const app = initializeApp(firebaseConfig);
+         import { getDatabase, ref, child, onValue, get }
+
+        from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+
+        const db = getDatabase();
+
+        //   firebase script should be here
+        //   var database = firebase.database();
+        //   database.ref('temperature').once('value', function(snapshot){
+        //       if(snapshot.exists()){
+        //           var content = '';
+        //           snapshot.forEach(function(data){
+        //               var val = data.val();
+        //               content +='<tr>';
+        //               content += '<td>' + val.descripcion + '</td>';
+        //               content += '<td>' + val.direccion + '</td>';
+        //               content += '<td>' + val.estado + '</td>';
+        //               content += '<td>' + val.imagen + '</td>';
+        //               content += '<td>' + val.tipo + '</td>';
+        //               content += '<td>' + val.udisplayName + '</td>';
+        //               content += '<td>' + val.uemail + '</td>';
+        //               content += '</tr>';
+        //           });
+        //           $('#ex-table').append(content);
+        //       }
+        //   });
+
+    //     function SelectAllData(){
+    //         firebase.database().ref('student').once('value',
+    //         function(AllRecords) { AllRecords.forEach(
+    //             function(CurrentRecord){
+    //                 var name = CurrentRecord.val().NameOfStudent;
+    //                 var roll =CurrentRecord.val().RollNo;
+    //                 var sec = CurrentRecord.val().Section;
+    //                 var gen=CurrentRecord.val().Gender;
+    //                 AddItemsToTable (name, roll, sec,gen);
+    //                 }
+    //         );
+    //     });
+    // }
+    // window.onload= SelectAllData;
+    // var stdNo=0;
+    // function AddItemsToTable(name, roll, sec,gen){
+    //     var tbody=document.getElementById("tbody1");
+    //     var trow=document.getElement("tr");
+    //     var td1=document.getElement("td");
+    //     var td2=document.getElement("td");
+    //     var td3=document.getElement("td");
+    //     var td4=document.getElement("td");
+    //     var td5=document.getElement("td");
+    //     td1.innerHTML=++stNo;
+    //     td2.innerHTML=name;
+    //     td3.innerHTML=roll;
+    //     td4.innerHTML=sec;
+    //     td5.innerHTML=gen;
+    //     trow.appendChild(td1);
+    //     trow.appendChild(td2);
+    //     trow.appendChild(td3);
+    //     trow.appendChild(td4);
+    //     trow.appendChild(td5);
+    //     tbody.appendChild(trow);
+    // }
+
+
+    var stdNo= 0;
+
+    var tbody=document.getElementById('tbody1');
+
+
+
+    function AddItemToTable(name, roll, sec, gen){ 
+        let trow =document.createElement("tr");
+            let td1= document.createElement('td');
+            let td2 =document.createElement('td'); 
+            let td3= document.createElement('td');
+            let td4= document.createElement('td');
+            let td5= document.createElement('td');
+
+            td1.innerHTML= ++stdNo;
+
+            td2.innerHTML= name;
+
+            td3.innerHTML= roll;
+
+            td4.innerHTML= sec;
+
+            td5.innerHTML= gen;
+
+
+
+            trow.appendChild(td1);
+
+            trow.appendChild(td2); 
+            trow.appendChild(td3);
+
+            trow.appendChild(td4);
+
+            trow.appendChild(td5);
+
+
+
+            tbody.appendChild(trow);
+        }
+
+        function AddAllItemsToTable(TheStudent){
+            stdNo=0;
+            tbody.innerHTML='';
+            TheStudent.forEach(element=>{
+                AddItemToTable(element.NameOfStudent,element.RollNo,element.Section,element.Gender)
+            });
+        }
+
+        function GetAllDataOnce(){
+            const dbRef=ref(db);
+
+            get(child(dbRef,"student"))
+            .then((snapshot) =>{
+                var students=[];
+                snapshot.forEach(childSnapshot=>{
+                    students.push(childSnapshot.val());
+                });
+                AddAllItemsToTable(students);
+            });
+            
+        }
+        window.onload=GetAllDataOnce;
+        </script>
+
+
+
+
+</script>
+
+</body>
+</html>

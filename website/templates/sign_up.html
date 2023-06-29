@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  crossorigin="anonymous"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <title>Sign up</title>
+  <style>
+    *{color: white; }
+body {
+ /* background-image: url('https://wallpaperaccess.com/full/624183.jpg'); */
+ background-color:#8d9cb6;
+
+background-repeat: no-repeat;
+background-attachment: fixed;
+  background-size: 100% 100%;
+}
+form { 
+    /* margin-left: 25%;
+    margin-right:25%;
+    margin-top: 100px; */
+    left      : 50%;
+    top       : 50%;
+    position  : absolute;
+    transform : translate(-50%, -50%);
+    width: 50%;
+    background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.6); /* Black background  opacity */
+  padding: 40px;
+  position: center;
+}
+  </style>
+</head>
+<body>
+  
+
+
+    <div >
+    <form method="POST"  >
+      <h3 align="center">Sign Up</h3>
+      Doctor  <a  href="/drsignup" >Sign up here</a> <br>        Are you a doctor? <a  href="/drlogin" >Sign here</a> <br>
+
+
+
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="firstName">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            placeholder="Enter name"
+          />
+        </div>
+    
+
+        <div class="col-md-5 mb-3">
+        <label for="email">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter email"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-2 mb-3">
+        
+          <label for="age">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            id="age"
+            name="age"
+            placeholder="Age"
+          />
+        </div>
+        
+        <div class="col-md-2 mb-3">
+
+          <label for="gender">Gender</label>
+          <input
+            type="text"
+            class="form-control"
+            id="gender"
+            name="gender"
+            placeholder="Gender"
+          />
+          </div>
+       
+
+        
+          <div class="col-md-2 mb-3">
+            <label for="Blood Group">Blood Group</label>
+            <input
+              type="text"
+              class="form-control"
+              id="bg"
+              name="bg"
+              placeholder="Blood Group"
+            />
+            </div>
+        
+            <div class="col-md-3 mb-3">
+              <label for="doctor_id">Doctor ID</label>
+              <input
+                type="number"
+                class="form-control"
+                id="doctor_id" 
+                name="doctor_id"
+                placeholder="Enter Doctor ID"
+              />
+              </div>
+            </div>  
+        
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+          <label for="phone">Phone Number</label>
+          <input
+            type="number"
+            class="form-control"
+            id="phone"
+            name="phone"
+            placeholder="Enter Phone Number"
+          />
+          </div>
+     
+        
+          <div class="col-md-5 mb-3">
+          <label for="relative">Relative Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="relative"
+            name="relative"
+            placeholder="Enter Relative Name"
+          />
+          </div>
+        </div>
+
+    
+      <div class="form-row">
+        <div class="col-md-9 mb-3">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          name="address"
+          placeholder="Enter Address"
+        />
+        </div>
+      </div>
+
+      <div class="form-row">
+   
+        <div class="col-md-4 mb-3">
+        <label for="password1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password1"
+          name="password1"
+          placeholder="Enter password"
+        />
+        </div>
+      
+
+        <div class="col-md-4 mb-3">
+        <label for="password2">Password (Confirm)</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password2"
+          name="password2"
+          placeholder="Confirm password"
+        />
+        </div>
+      </div>
+      
+      
+      
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+  
